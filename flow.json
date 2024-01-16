@@ -1,0 +1,34 @@
+{
+	"contracts": {
+		"HelloWorld": "cadence/contracts/HelloWorld.cdc"
+	},
+	"networks": {
+		"emulator": "127.0.0.1:3569",
+		"mainnet": "access.mainnet.nodes.onflow.org:9000",
+		"testing": "127.0.0.1:3569",
+		"testnet": "access.devnet.nodes.onflow.org:9000"
+	},
+	"accounts": {
+		"bob": {
+			"address": "288533841615ea7f",
+			"key": {
+				"type": "file",
+				"location": "bob.pkey"
+			}
+		},
+		"emulator-account": {
+			"address": "f8d6e0586b0a20c7",
+			"key": {
+				"type": "file",
+				"location": "emulator.pkey"
+			}
+		}
+	},
+	"deployments": {
+		"testnet": {
+			"bob": [
+				"HelloWorld"
+			]
+		}
+	}
+}

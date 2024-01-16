@@ -1,2 +1,40 @@
-# hello-world-flix
-Simple repository to demonstrate reusability using FLIX
+# Hello World FLIX
+Simple repository to demonstrate reusability using FLIX template json files. In this repository is the HelloWorld Cadence contract, a script to read the HelloWorld greeting and a transaction to update the HelloWorld contract's greeting.
+
+The FLIX template in json format is used for scripts and transactions to describe the interactions with a contract.
+
+
+## Cadence
+This repository is mainly used to store the FLIX templates and the related Cadence files. 
+
+## FLIX 
+A few flow-cli commands are used to generate the FLIX template json files
+
+Generate template file for reading the HelloWorld contract greeting
+```shell
+flow flix generate cadence/scripts/ReadHelloWorld.cdc --save cadence/templates/ReadHelloWorld.template.json      
+```
+
+Generate template file for Updating HelloWorld greeting
+```shell
+flow flix generate cadence/transactions/UpdateHelloWorld.cdc --save cadence/templates/UpdateHelloWorld.template.json
+```
+
+## Sharing
+The template files are all that are needed to interact with the HelloWorld contract. Template can be executed using a local file or a url.
+
+### flow-cli
+Use flow-cli to execute flix interaction template to read HelloWorld greeting
+```shell
+flow flix execute cadence/templates/ReadHelloWorld.template.json --network testnet
+```
+Result: "Hello, World!"
+
+Update HelloWorld greeting using FLIX
+```shell
+flow flix execute cadence/templates/UpdateHelloWorld.template.json "New Greeting" --network testnet --signer bob
+```
+
+Execute the ReadHelloWorld template to see that the HelloWorld greeting has been updated. One benefit is the user does not need to be familiar with Cadence in order to interact with smart contracts. 
+
+### Remotely

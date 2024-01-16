@@ -1,0 +1,69 @@
+{
+    "f_type": "InteractionTemplate",
+    "f_version": "1.1.0",
+    "id": "d77ea8233f5fa224cea6219d2d43ca1e50c7a4e29b75d2397a94e2927ddca76e",
+    "data": {
+        "type": "transaction",
+        "interface": "",
+        "messages": [
+            {
+                "key": "title",
+                "i18n": [
+                    {
+                        "tag": "en-US",
+                        "translation": "Update Greeting"
+                    }
+                ]
+            },
+            {
+                "key": "description",
+                "i18n": [
+                    {
+                        "tag": "en-US",
+                        "translation": "Update the greeting on the HelloWorld contract"
+                    }
+                ]
+            }
+        ],
+        "cadence": {
+            "body": "import \"HelloWorld\"\n\n#interaction (\n  version: \"1.1.0\",\n\ttitle: \"Update Greeting\",\n\tdescription: \"Update the greeting on the HelloWorld contract\",\n\tlanguage: \"en-US\",\n)\ntransaction(greeting: String) {\n\n  prepare(acct: AuthAccount) {\n    log(acct.address)\n  }\n\n  execute {\n    HelloWorld.updateGreeting(newGreeting: greeting)\n  }\n}\n",
+            "network_pins": [
+                {
+                    "network": "testnet",
+                    "pin_self": "57896ac9b4d282f4556f253d743982837ef471966fe9d5ea0069acdc0973e86e"
+                }
+            ]
+        },
+        "dependencies": [
+            {
+                "contracts": [
+                    {
+                        "contract": "HelloWorld",
+                        "networks": [
+                            {
+                                "network": "testnet",
+                                "address": "0x288533841615ea7f",
+                                "dependency_pin_block_height": 147923172,
+                                "dependency_pin": {
+                                    "pin": "6bf343e4f35a4e7a875e9e621bef23094070d772ccd6a768fd9db0180f27380c",
+                                    "pin_self": "c8e9fb489a50a52e8741e5ad2d48129969e72b690b538602be003dda4284ecb6",
+                                    "pin_contract_name": "HelloWorld",
+                                    "pin_contract_address": "0x288533841615ea7f",
+                                    "imports": []
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "parameters": [
+            {
+                "label": "greeting",
+                "index": 0,
+                "type": "String",
+                "messages": []
+            }
+        ]
+    }
+}
