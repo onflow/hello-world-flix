@@ -38,3 +38,15 @@ flow flix execute cadence/templates/UpdateHelloWorld.template.json "New Greeting
 Execute the ReadHelloWorld template to see that the HelloWorld greeting has been updated. One benefit is the user does not need to be familiar with Cadence in order to interact with smart contracts. 
 
 ### Remotely
+
+Use flow-cli to execute a FLIX from a url.
+```shell
+flow flix execute https://raw.githubusercontent.com/onflow/hello-world-flix/main/cadence/templates/ReadHelloWorld.template.json --network testnet
+```
+ Result: "New Greeting"
+
+ ```shell
+flow flix execute https://raw.githubusercontent.com/onflow/hello-world-flix/main/cadence/templates/UpdateHelloWorld.template.json "Hello World" --network testnet --signer bob
+ ```
+
+ This transaction will set the greeting back to `Hello World`
