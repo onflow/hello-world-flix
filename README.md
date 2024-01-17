@@ -50,3 +50,13 @@ flow flix execute https://raw.githubusercontent.com/onflow/hello-world-flix/main
  ```
 
  This transaction will set the greeting back to `Hello World`
+
+ ## Releases
+
+ FLIX json templates are regular files, developers can use github releases to make these templates available so other developers can rely on a specific version. 
+
+ ### `v0.1.0`
+ `Read HelloWorld greeting` https://raw.githubusercontent.com/onflow/hello-world-flix/v0.1.0/cadence/templates/ReadHelloWorld.template.json
+
+`Update HelloWorld greeting`
+ https://raw.githubusercontent.com/onflow/hello-world-flix/v0.1.0/cadence/templates/UpdateHelloWorld.template.json
