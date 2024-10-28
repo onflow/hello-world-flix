@@ -8,7 +8,7 @@ import "HelloWorld"
 )
 transaction(greeting: String) {
 
-  prepare(acct: AuthAccount) {
+  prepare(acct: &Account) {
     log(acct.address)
   }
 

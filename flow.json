@@ -9,24 +9,24 @@
 		"testnet": "access.devnet.nodes.onflow.org:9000"
 	},
 	"accounts": {
-		"bob": {
-			"address": "288533841615ea7f",
-			"key": {
-				"type": "file",
-				"location": "bob.pkey"
-			}
-		},
 		"emulator-account": {
 			"address": "f8d6e0586b0a20c7",
 			"key": {
 				"type": "file",
 				"location": "emulator.pkey"
 			}
+		},
+		"sue": {
+			"address": "1748b7c3c083a0a1",
+			"key": {
+				"type": "file",
+				"location": "sue.pkey"
+			}
 		}
 	},
 	"deployments": {
 		"testnet": {
-			"bob": [
+			"sue": [
 				"HelloWorld"
 			]
 		}
